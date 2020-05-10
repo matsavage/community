@@ -145,6 +145,7 @@ For a device to communicate with Cloud IoT Core, the device identity needs to be
         export EVENT_TOPIC=enviro-event
         export REGISTRY_ID=enviro-registry
         export REGION=europe-west1
+        export BIGQUERY_REGION=EU
         export DEVICE_ID=enviro-board
         export DATASET=enviro_dataset
         export TABLE=sensor_data
@@ -249,7 +250,7 @@ In this section, you create the data set and table in BigQuery to store the sens
 
 In Cloud Shell, run the following:
 
-    bq mk $DATASET
+    bq mk --location $BIGQUERY_REGION $DATASET
 
     bq mk ${DATASET}.${TABLE} $HOME/community/tutorials/cloud-iot-enviro-board-workshop/bq/schema.json
 
